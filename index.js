@@ -2,8 +2,8 @@
  * Module dependencies
  */
 var domify   = require( 'domify' ),
-    css      = require( 'css' ),
-    events   = require( 'events' ),
+    css      = require( 'component-css' ),
+    events   = require( 'component-events' ),
     template = require( './template' );
 
 /**
@@ -63,6 +63,7 @@ Scrollbar.prototype.setupStyles = function( ) {
   } );
   
   this.updateHeight();
+  
   css( this.thumb, {
     top: this.option.padding,
     height: this.thumbHeight,
