@@ -1,11 +1,11 @@
 
 # scrollbar
 
-  minimalistic scrollbar that only serves my personal trivial needs, sorry :D
+  minimalistic scrollbar
 
 ## Installation
 
-    $ component install mnmly/scrollbar
+    $ npm install --save sethvincent/scrollbar
 
 ## API
 
