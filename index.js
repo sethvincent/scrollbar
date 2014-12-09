@@ -1,10 +1,11 @@
 /**
  * Module dependencies
  */
-var domify   = require( 'domify' ),
-    css      = require( 'component-css' ),
-    events   = require( 'component-events' ),
-    template = require( './template' );
+var fs = require('fs');
+var domify = require( 'domify' );
+var css = require( 'component-css' );
+var events = require( 'component-events' );
+var template = fs.readFileSync( './template.html', 'utf8' );
 
 /**
  * Expose `Scrollbar`
@@ -26,9 +27,10 @@ function Scrollbar( el, option ) {
   this.el        = el;
   this.option    = option || { padding: 0 };
   this.scrollTop = 0;
-  this.container = domify( template )[0];
-  this.view      = this.container.querySelector( '.content-view' );
-  this.thumb     = this.container.querySelector( '.thumb' );
+  this.container = domify( template );
+  console.log(this.container)
+  this.view      = this.container.querySelector( '.scrollbar-content-view' );
+  this.thumb     = this.container.querySelector( '.scrollbar-thumb' );
   this.width     = this.el.clientWidth,
   this.height    = this.el.clientHeight,
 
@@ -59,7 +61,8 @@ Scrollbar.prototype.setupStyles = function( ) {
   css( this.el, {
     width:    'auto',
     height:   'auto',
-    position: 'relative'
+    position: 'relative',
+    visibility: 'visible'
   } );
   
   this.updateHeight();
@@ -70,7 +73,7 @@ Scrollbar.prototype.setupStyles = function( ) {
   } );
 
   if ( this.thumbHeight > this.el.clientHeight ){
-    this.container.classList.add( 'no-scroll' )
+    this.container.classList.add( 'scrollbar-no-scroll' )
   }
 };
 

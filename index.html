@@ -2,24 +2,24 @@
 <html>
   <head>
     <title>Example</title>
-    <link rel="stylesheet" href="build/build.css" type="text/css" media="all" />
-    <script src="build/build.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="scrollbar.css" type="text/css" media="all" />
     <style type="text/css" media="all">
-      body{
+      body {
         padding-top: 100px;
         font-family: "Helvetica Neue", sans-serif;
       }
-      .scroll-box{
+      .scrollbar-scroll-box {
         margin: 0 auto;
         display: block;
 
       }
-      .content-view{
+      .scrollbar-content-view {
         outline: 1px solid;
       }
-      .me{
+      .me {
         width: 100px;
         height: 100px;
+        visibility: hidden;
       }
 
     </style>
@@ -30,10 +30,6 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla magna ut nibh hendrerit non egestas neque auctor.
     </div>
 
-    <script type="text/javascript" charset="utf-8">
-      var Scrollbar = require( 'scrollbar' );
-      var me = document.querySelector( '.me' );
-      scrollbar = new Scrollbar( me, { padding: 5 } );
-    </script>
+    <script src="example.js"></script>
   </body>
 </html>

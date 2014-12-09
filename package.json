@@ -7,14 +7,23 @@
   },
   "main": "index.js",
   "style": "scrollbar.css",
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
   "scripts": {
     "test": "",
     "start": ""
   },
   "dependencies": {
-    "component-css": "0.0.6",
+    "component-css": "git://github.com/component/css",
     "component-events": "^1.0.9",
     "domify": "^1.3.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "beefy": "^2.1.1",
+    "brfs": "^1.2.0",
+    "browserify": "^7.0.0"
+  }
 }
